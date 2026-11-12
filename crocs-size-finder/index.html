@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Crocs Size Finder | Yael Hazam</title>
+<meta name="description" content="אב-טיפוס שממליץ על מידה ודגם של קרוקס לפי אורך ורוחב כף הרגל וסוג השימוש.">
+<meta property="og:title" content="Crocs Size Finder">
+<meta property="og:description" content="איזו מידה? איזה דגם? אב-טיפוס על נתונים מ-WeShoes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page" id="page" dir="rtl" lang="he" data-lang="he">
+
+  <header class="wrap top">
+    <a class="home" href="https://yaelhazam.github.io"><span data-l="he">יעל חזם</span><span data-l="en">Yael Hazam</span></a>
+    <button class="lang" id="lang" type="button"><span data-l="he">English</span><span data-l="en">עברית</span></button>
+  </header>
+
+  <div class="wrap hero">
+    <h1><span data-l="he">איזו מידה? <em>איזה דגם?</em></span><span data-l="en">Which size? <em>Which model?</em></span></h1>
+    <p class="lede" data-l="he">אב-טיפוס של כלי למציאת מידה ודגם של קרוקס. מכניסים אורך ורוחב של כף הרגל ובשביל מה הנעל, ומקבלים מידה, דגם, הסבר לבחירה ובדיקה בסניפים. הנתונים נאספו מהאתר של WeShoes.</p>
+    <p class="lede" data-l="en">A prototype tool for finding a Crocs size and model. Enter foot length, width and what the shoes are for, and get a size, a model, the reason behind the pick and a store check. The data was collected from the WeShoes site.</p>
+  </div>
+
+  <section id="tool">
+    <div class="wrap">
+      <div class="finder-card" data-reveal>
+        <form class="controls" id="form" onsubmit="return false">
+          <div>
+            <label class="flabel" for="foot"><span data-l="he">אורך כף הרגל</span><span data-l="en">Foot length</span>: <span class="cm n" id="cm"></span></label>
+            <input type="range" id="foot" dir="ltr" min="20" max="35" step="0.5" value="24.5">
+          </div>
+          <fieldset>
+            <legend><span data-l="he">רוחב כף הרגל</span><span data-l="en">Foot width</span></legend>
+            <div class="seg">
+              <label><input type="radio" id="w-narrow" name="width" value="narrow"><span><span data-l="he">צרה</span><span data-l="en">Narrow</span></span></label>
+              <label><input type="radio" id="w-regular" name="width" value="regular" checked><span><span data-l="he">רגילה</span><span data-l="en">Regular</span></span></label>
+              <label><input type="radio" id="w-wide" name="width" value="wide"><span><span data-l="he">רחבה</span><span data-l="en">Wide</span></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend><span data-l="he">איך הנעל צריכה לשבת</span><span data-l="en">How should they sit</span></legend>
+            <div class="seg">
+              <label><input type="radio" id="p-snug" name="pref" value="snug"><span><span data-l="he">צמודה</span><span data-l="en">Secure</span></span></label>
+              <label><input type="radio" id="p-any" name="pref" value="any" checked><span><span data-l="he">לא משנה</span><span data-l="en">Either</span></span></label>
+              <label><input type="radio" id="p-room" name="pref" value="room"><span><span data-l="he">מרווחת</span><span data-l="en">Roomy</span></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend><span data-l="he">בשביל מה</span><span data-l="en">What for</span></legend>
+            <div class="seg">
+              <label><input type="radio" id="u-every" name="use" value="everyday" checked><span><span data-l="he">כל יום</span><span data-l="en">Every day</span></span></label>
+              <label><input type="radio" id="u-walk" name="use" value="walk"><span><span data-l="he">הליכה</span><span data-l="en">Walking</span></span></label>
+              <label><input type="radio" id="u-warm" name="use" value="warm"><span><span data-l="he">חורף</span><span data-l="en">Winter</span></span></label>
+              <label><input type="radio" id="u-height" name="use" value="height"><span><span data-l="he">גובה וסטייל</span><span data-l="en">Height</span></span></label>
+              <label><input type="radio" id="u-summer" name="use" value="summer"><span><span data-l="he">קיץ</span><span data-l="en">Summer</span></span></label>
+            </div>
+          </fieldset>
+        </form>
+        <div class="result" id="result" aria-live="polite"></div>
+      </div>
+
+      <p class="small" data-l="he">12 דגמים למבוגרים מתוך 677 מוצרי קרוקס ב-WeShoes, כפי שהופיעו ב-5.11.2026, במחיר מחירון וללא מלאי חי. סוג ההתאמה ל-Classic, לדגם המרופד ול-Flip מבוסס על מדריכי מידות. בשאר הדגמים הוא הערכה, מסומן ״משוער״, והוא הדבר הראשון שהייתי מאמתת מול נתוני החברה.</p>
+      <p class="small" data-l="en">12 adult models out of 677 Crocs products on WeShoes, as listed on Nov 5, 2026, at list price and without live stock. The fit type for Classic, Lined and Flip comes from size guides. For the others it’s an estimate, marked “estimated”, and it’s the first thing I’d verify against company data.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2><span data-l="he">התשובה כ-API</span><span data-l="en">The answer as an API</span></h2>
+      <p class="intro" data-l="he">כך הכלי היה מחזיר את התשובה לאתר, לקופה או למסך של המוכרות בסניף. היא מתעדכנת עם כל בחירה.</p>
+      <p class="intro" data-l="en">This is how the tool would return the answer to the website, the register or a screen for store staff. It updates with every choice.</p>
+      <div class="json"><div class="head-line" dir="ltr">POST /api/fit → 200</div><pre id="json" dir="ltr"></pre></div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="wrap">
+      <h2><span data-l="he">ככה הייתי בונה את זה</span><span data-l="en">How I’d build it</span></h2>
+      <p class="intro" data-l="he">מאב-טיפוס בדף אחד לכלי שעובד באתר ובסניף.</p>
+      <p class="intro" data-l="en">From a one-page prototype to a tool that works on the site and in the store.</p>
+      <ol class="plan">
+        <li class="card mint" data-tilt data-reveal><h3><span data-l="he">מושכים את הקטלוג</span><span data-l="en">Pull the catalog</span></h3>
+          <p data-l="he">כל מוצרי הקרוקס, דרך ה-API של מערכת המסחר. עד שיש גישה, אפשר להתחיל מהעמודים הציבוריים.</p>
+          <p data-l="en">All Crocs products, through the commerce system’s API. Until there’s access, the public pages are a starting point.</p></li>
+        <li class="card sky" data-tilt data-reveal><h3><span data-l="he">מנקים את הנתונים</span><span data-l="en">Clean the data</span></h3>
+          <p data-l="he">מאחדים צבעים תחת דגם אחד לפי קוד ה-SKU, ומפרידים מידה ומלאי לשדות משלהם.</p>
+          <p data-l="en">Group colors under one model by SKU code, and split size and stock into their own fields.</p></li>
+        <li class="card lilac" data-tilt data-reveal><h3><span data-l="he">כותבים כללי התאמה</span><span data-l="en">Write fit rules</span></h3>
+          <p data-l="he">טבלת המידות וסוג ההתאמה של כל דגם הופכים לכללים שקל לבדוק בטסטים, כמו בכלי שלמעלה.</p>
+          <p data-l="en">The size chart and each model’s fit type become rules that are easy to test, as in the demo above.</p></li>
+        <li class="card peach" data-tilt data-reveal><h3><span data-l="he">מוסיפים שכבת AI</span><span data-l="en">Add an AI layer</span></h3>
+          <p data-l="he">לקוח כותב במילים שלו: ״רגל רחבה ועומדת כל היום״. המודל מתרגם לפרמטרים, והכללים קובעים את המידה, כך שהוא לא ממציא מידה או דגם.</p>
+          <p data-l="en">A customer writes in their own words: “wide feet, on my feet all day.” The model turns that into parameters and the rules set the size, so it can’t invent a size or a model.</p></li>
+        <li class="card butter" data-tilt data-reveal><h3><span data-l="he">מחברים לערוצים</span><span data-l="en">Connect the channels</span></h3>
+          <p data-l="he">שירות Node.js ו-Express שמשרת ווידג׳ט באתר ומסך למוכרות בסניף, עם מלאי חי.</p>
+          <p data-l="en">A Node.js and Express service behind a widget on the site and a screen for store staff, with live stock.</p></li>
+        <li class="card pinkc" data-tilt data-reveal><h3><span data-l="he">מודדים ומשפרים</span><span data-l="en">Measure and improve</span></h3>
+          <p data-l="he">משווים החזרות בגלל מידה לפני ואחרי, ומשתמשים בהן כדי לדייק את הכללים של כל דגם.</p>
+          <p data-l="en">Compare size-related returns before and after, and use them to tune each model’s rules.</p></li>
+      </ol>
+
+      <div class="found" data-reveal>
+        <h3><span data-l="he">מה כבר למדתי מהנתונים</span><span data-l="en">What the data has already taught me</span></h3>
+        <ul data-l="he">
+          <li>אותו דגם מופיע בכמה כתיבים: ״קלאסים״ ו״קלאסיים״, ״נעלי קרוקס״ ו״כפכפי קרוקס״. לכן אקבץ לפי קוד דגם, לא לפי כותרת.</li>
+          <li>ב-SKU <span class="n">203591-060-M10W12</span> מופיעה מידת ה-US, ולפי הטבלה <span class="n">M10 W12</span> היא <span class="n">43-44</span>. זה מחבר בין הקטלוג לטבלה. ב-Classic השחור הפורמט אחר (<span class="n">10001-001-005</span>), אז צריך גם מיפוי.</li>
+          <li>בעמוד ה-Classic השחור, <span class="n">40-41</span> ו-<span class="n">44-45</span> מופיעות רק בפרטי המוצר, ו-<span class="n">48-49</span> עד <span class="n">52-53</span> רק בבורר המידות. המקור הקובע צריך להיות נתוני המלאי.</li>
+          <li>בעמודי המוצר שבדקתי אין שדה של סוג התאמה, מעבר לקישור למדריך המידות. זה השדה הראשון שהייתי מוסיפה.</li>
+          <li>בעמודי המוצר כבר יש בדיקת מלאי בסניפים, אז הנתון קיים וצריך רק להתחבר אליו.</li>
+        </ul>
+        <ul data-l="en">
+          <li>The same model appears under several spellings and product words in its Hebrew title. So I’d group by model code, not by title.</li>
+          <li>SKU <span class="n">203591-060-M10W12</span> contains the US size, and the chart maps <span class="n">M10 W12</span> to <span class="n">43-44</span>. That links the catalog to the chart. The black Classic uses another format (<span class="n">10001-001-005</span>), so a mapping is needed too.</li>
+          <li>On the black Classic page, <span class="n">40-41</span> and <span class="n">44-45</span> appear only in the product details, while <span class="n">48-49</span> to <span class="n">52-53</span> appear only in the size selector. Stock data should be the source of truth.</li>
+          <li>The product pages I checked have no fit-type field beyond a link to the size guide. That’s the first field I’d add.</li>
+          <li>Product pages already offer a store stock check, so the data exists and the tool only needs to connect to it.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="wrap">
+    <p><span data-l="he">מקורות לנתונים:</span><span data-l="en">Data sources:</span>
+      <a href="https://weshoes.co.il/collections/crocs">WeShoes</a> ·
+      <a href="https://crocs.co.th/en/pages/adult-size-chart"><span data-l="he">טבלת מידות Crocs</span><span data-l="en">Crocs size chart</span></a> ·
+      <a href="https://solecentral.com.au/pages/crocs-sizing">Sole Central</a> ·
+      <a href="https://www.shuperb.com/blogs/news/crocs-size-guide-uk-do-crocs-run-big-or-small">Shuperb</a>
+    </p>
+    <p><span data-l="he">פרויקט של יעל חזם. נבנה עם Claude.</span><span data-l="en">A project by Yael Hazam. Built with Claude.</span></p>
+  </div></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
